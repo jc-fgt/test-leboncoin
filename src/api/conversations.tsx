@@ -57,5 +57,4 @@ export const patchConversation = async (id: number): Promise<Conversation> => {
   } catch (e) {
     throw new Error(`Can't patch conversation!`);
   }
-
 }

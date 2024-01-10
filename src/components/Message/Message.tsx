@@ -34,4 +34,3 @@ function Message({ message }: Props) {
 }
 
 export default Message;
-

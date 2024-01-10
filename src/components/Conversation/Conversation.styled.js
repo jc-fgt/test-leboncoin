@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
   height: 80vh;
   @media(min-width: 600px) {
     width: 50%;
-    height: 95vh;
   }
 `;
 
@@ -37,4 +36,4 @@ export const Input = styled.input`
   box-shadow: 0px 1px 3px rgba(220, 220, 220, .5);
   width: 100%;
   padding: 10px;
-  `;
+`;

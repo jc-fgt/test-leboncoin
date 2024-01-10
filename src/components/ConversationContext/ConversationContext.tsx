@@ -12,7 +12,6 @@ export const ConversationProvider: React.FC<{ children: React.ReactNode, convers
   messages
 }) => {
   return (
-
     <ConversationContext.Provider value={{ loggedUserId, conversation, messages }}>
       {children}
     </ConversationContext.Provider >

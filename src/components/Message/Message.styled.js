@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Wrapper = styled.div`
   display: flex;
   justify-content: ${props => props.isOwner ? 'start' : 'end'};
@@ -18,7 +17,7 @@ export const Tile = styled.div`
   gap: 10%;
   background-color: ${props => props.color};
   &:before {
-    position: absolute;
+    position: static;
     margin-top: -30px;
     content: "${props => props.author}";
     color: lightgrey;

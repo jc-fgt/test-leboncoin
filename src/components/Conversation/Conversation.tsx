@@ -7,7 +7,7 @@ import { Wrapper, TopBar, Flow, Input, InputWrapper } from "@components/Conversa
 import { patchConversation } from "@api/conversations";
 import { postNewMessage } from "@api/messages";
 
-function Conversation() {
+const Conversation = () => {
   const router = useRouter();
   const context = useContext(ConversationContext);
 
@@ -56,4 +56,3 @@ function Conversation() {
 }
 
 export default Conversation;
-

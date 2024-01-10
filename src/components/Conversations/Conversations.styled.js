@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: block;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 50vh;
 `
 
 export const Tile = styled(Link)`
@@ -21,6 +21,7 @@ export const Tile = styled(Link)`
 export const LeftSideTile = styled.div`
   padding-top: 3px;
 `;
+
 export const RightSideTile = styled.div`
 `;
 
