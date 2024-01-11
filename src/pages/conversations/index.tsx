@@ -1,17 +1,18 @@
+"use strict";
 import { GetServerSideProps } from "next";
 import { loggedUserId } from "@pages/_app"
 import styles from '@styles/Conversations.module.css'
 import { getUserById } from "@api/users";
-import { getAll } from "@api/conversations"
+import { getAllConversations } from "@api/conversations"
 import { Conversation } from "@types/conversation";
-import Conversations from "@components/Conversations/Conversations";
-import Header from "@components/Header/Header";
+import Conversations from "@components/molecules/Conversations/Conversations";
+import Header from "@components/atoms/Header/Header";
 
 interface Props {
   conversations: Conversation[];
 }
 
-function ConversationsPage({ conversations }: Props) {
+const ConversationsPage = ({ conversations }: Props) => {
   return (
     <div className={styles.container}>
       <Header type="normal" />
@@ -28,7 +29,7 @@ export const getServerSideProps = (async () => {
   let conversations = [];
 
   if (user.id) {
-    conversations = await getAll(user.id);
+    conversations = await getAllConversations(user.id);
   }
 
   return {

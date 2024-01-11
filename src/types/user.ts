@@ -1,3 +1,4 @@
+"use strict";
 export interface User {
   id: number
   nickname: string

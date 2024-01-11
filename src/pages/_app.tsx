@@ -1,3 +1,4 @@
+"use strict";
 import type { AppProps } from 'next/app'
 import { getLoggedUserId } from '@utils/getLoggedUserId'
 import '../styles/globals.css'

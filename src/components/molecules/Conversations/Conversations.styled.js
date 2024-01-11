@@ -1,3 +1,4 @@
+"use strict";
 import styled from "styled-components";
 import Link from "next/link";
 
@@ -6,7 +7,13 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 50vh;
-`
+  @media (min-width: 360px) {
+    width: 40vh;  
+  }
+  @media (min-width: 1024px) {
+    width: 50vh;  
+  }
+`;
 
 export const Tile = styled(Link)`
   border-radius: 10px;

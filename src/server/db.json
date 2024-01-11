@@ -31,6 +31,134 @@
       "senderId": 2,
       "senderNickname": "Jeremie",
       "lastMessageTimestamp": 1625648667
+    },
+    {
+      "recipientId": 2,
+      "recipientNickname": "Jeremie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705003424881,
+      "id": 5
+    },
+    {
+      "recipientId": 2,
+      "recipientNickname": "Jeremie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705003432939,
+      "id": 6
+    },
+    {
+      "recipientId": 2,
+      "recipientNickname": "Jeremie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705003445185,
+      "id": 7
+    },
+    {
+      "recipientId": 4,
+      "recipientNickname": "Elodie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705003468157,
+      "id": 8
+    },
+    {
+      "recipientId": 4,
+      "recipientNickname": "Elodie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705003550007,
+      "id": 9
+    },
+    {
+      "recipientId": 3,
+      "recipientNickname": "Patrick",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705003632048,
+      "id": 10
+    },
+    {
+      "recipientId": 2,
+      "recipientNickname": "Jeremie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705003741317,
+      "id": 11
+    },
+    {
+      "recipientId": 2,
+      "recipientNickname": "Jeremie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705005074709,
+      "id": 12
+    },
+    {
+      "recipientId": 2,
+      "recipientNickname": "Jeremie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705005379660,
+      "id": 13
+    },
+    {
+      "recipientId": 3,
+      "recipientNickname": "Patrick",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705005417347,
+      "id": 14
+    },
+    {
+      "recipientId": 2,
+      "recipientNickname": "Jeremie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705005470882,
+      "id": 15
+    },
+    {
+      "recipientId": 3,
+      "recipientNickname": "Patrick",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705005716618,
+      "id": 16
+    },
+    {
+      "recipientId": 3,
+      "recipientNickname": "Patrick",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705005743157,
+      "id": 17
+    },
+    {
+      "recipientId": 3,
+      "recipientNickname": "Patrick",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705005789035,
+      "id": 18
+    },
+    {
+      "recipientId": 2,
+      "recipientNickname": "Jeremie",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705005932668,
+      "id": 19
+    },
+    {
+      "recipientId": 3,
+      "recipientNickname": "Patrick",
+      "senderId": 1,
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1705007280301,
+      "id": 20
     }
   ],
   "messages": [
@@ -152,6 +280,69 @@
       "authorId": 1,
       "body": "ploup",
       "id": 17
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1704980131149,
+      "authorId": 1,
+      "body": "kjjkjk",
+      "id": 18
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1704981515332,
+      "authorId": 1,
+      "body": "bloup",
+      "id": 19
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1704981532727,
+      "authorId": 1,
+      "body": "bloup2",
+      "id": 20
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1704981702961,
+      "authorId": 1,
+      "body": "bloup3",
+      "id": 21
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1704981707718,
+      "authorId": 1,
+      "body": "bloup34",
+      "id": 22
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1705004405427,
+      "authorId": 1,
+      "body": "plop",
+      "id": 23
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1705004701546,
+      "authorId": 1,
+      "body": "gnagna",
+      "id": 24
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1705005055308,
+      "authorId": 1,
+      "body": "ploup",
+      "id": 25
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1705005110153,
+      "authorId": 1,
+      "body": "zoup",
+      "id": 26
     }
   ],
   "users": [

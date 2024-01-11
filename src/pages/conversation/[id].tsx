@@ -1,13 +1,14 @@
+"use strict";
 import { GetServerSideProps } from "next";
 import styles from '@styles/Conversations.module.css'
-import { getById } from "@api/conversations";
+import { getConversationById } from "@api/conversations";
 import { getByConversationId } from "@api/messages";
 import { Conversation as ConversationType } from "@types/conversation";
 import { Message as MessageType } from "@types/message";
-import Conversation from "@components/Conversation/Conversation";
-import { ConversationProvider } from "@components/ConversationContext/ConversationContext";
-import Header from "@components/Header/Header";
-import NotFound from "@pages/NotFound/NotFound";
+import { ConversationProvider } from "@components/hoc/ConversationContext/ConversationContext";
+import Header from "@components/atoms/Header/Header";
+import NotFound from "@components/molecules/NotFound/NotFound";
+import Conversation from "@components/organisms/Conversation/Conversation";
 
 const DEFAULT_CONVERSATION = {}
 
@@ -16,7 +17,7 @@ interface Props {
   messages: MessageType[];
 }
 
-function ConversationPage({ conversation, messages }: Props) {
+const ConversationPage = ({ conversation, messages }: Props) => {
   if (!conversation.id) {
     return <NotFound />
   }
@@ -36,7 +37,7 @@ export default ConversationPage;
 export const getServerSideProps = (async (context) => {
   const { id: conversationId } = context.query;
 
-  const conversation = await getById(conversationId);
+  const conversation = await getConversationById(conversationId);
   const messages = await getByConversationId(conversationId);
 
   return {

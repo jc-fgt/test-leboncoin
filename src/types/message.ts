@@ -1,3 +1,4 @@
+"use strict";
 export interface Message {
   id: number
   conversationId: number

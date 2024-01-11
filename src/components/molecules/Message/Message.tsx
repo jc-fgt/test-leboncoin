@@ -1,14 +1,16 @@
-import React, { use, useContext, useEffect, useState } from "react";
+"use strict";
+import React, { useContext, useEffect, useState } from "react";
 import { Message } from "@types/message";
 import { randomColor } from "@utils/colors";
-import { ConversationContext } from "@components/ConversationContext/ConversationContext";
-import { Tile, Wrapper } from "@components/Message/Message.styled";
+import { ConversationContext } from "@components/hoc/ConversationContext/ConversationContext";
+import { Tile, Wrapper } from "./Message.styled";
 
 interface Props {
   message: Message;
 }
 
-function Message({ message }: Props) {
+const Message = ({ message }: Props) => {
+
   const context = useContext(ConversationContext);
   const [userName, setUserName] = useState('');
   const [isOwner, setIsOwner] = useState(true);
@@ -16,15 +18,14 @@ function Message({ message }: Props) {
 
   useEffect(() => {
     if (message.authorId === context.conversation.recipientId) {
-      setUserName(context.conversation.recipientNickname)
-      setIsOwner(false)
+      setUserName(context.conversation.recipientNickname);
+      setIsOwner(false);
       const color = randomColor(context.conversation.recipientNickname);
-      setColor(color.value)
+      setColor(color.value);
     }
   }, [message, context]);
-  //if is owner : 
-  //    align right, else left
-  //    color: grey, else generate color
+
+
   return (
     <Wrapper isOwner={isOwner}>
       <Tile color={color} author={userName}>{message.body}</Tile>

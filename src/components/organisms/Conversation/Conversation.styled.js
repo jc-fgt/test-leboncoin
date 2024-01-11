@@ -1,3 +1,4 @@
+"use strict";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -13,11 +14,23 @@ export const Wrapper = styled.div`
 
 export const TopBar = styled.div`
   position: fixed;
+  display:flex;
   top: 50px;
   left: 0;
   width: 100%; 
   background-color: rgba(200, 200, 200, .8);
   border-top: 4px solid rgb(150, 150, 150);
+  font-weight: 600;
+  >div:first-child {
+    flex: 1;
+  }
+  >div:last-child {
+    flex: 1;
+    display: none;
+    @media(min-width: 600px) {
+      display: block;
+    }
+  }
 `;
 
 export const Flow = styled.div`
@@ -25,15 +38,4 @@ export const Flow = styled.div`
   height: 100%;
 `;
 
-export const InputWrapper = styled.div`
-  border-top: 1px solid rgba(220, 220, 220, .8);
-  padding: 10px;
-`;
-
-export const Input = styled.input`
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0px 1px 3px rgba(220, 220, 220, .5);
-  width: 100%;
-  padding: 10px;
-`;
+export const BottomMessage = styled.div``;

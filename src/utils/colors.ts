@@ -1,3 +1,4 @@
+"use strict";
 interface ColorDefinition {
   value: string;
   character: string;

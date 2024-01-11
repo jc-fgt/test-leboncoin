@@ -1,34 +1,48 @@
-import React, { useContext, useRef, useState } from "react";
+"use strict";
+import React, { createRef, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Message from "@components/Message/Message";
 import { formatedDateFromTimestamp } from "@utils/dates";
-import { ConversationContext, loggedUserId } from "@components/ConversationContext/ConversationContext";
-import { Wrapper, TopBar, Flow, Input, InputWrapper } from "@components/Conversation/Conversation.styled";
 import { patchConversation } from "@api/conversations";
 import { postNewMessage } from "@api/messages";
+import { ConversationContext, loggedUserId } from "@components/hoc/ConversationContext/ConversationContext";
+import Message from "@components/molecules/Message/Message";
+import { Wrapper, TopBar, Flow, BottomMessage } from "./Conversation.styled";
+import InputMessageBox from "@components/molecules/InputMessageBox/InputMessageBox";
 
 const Conversation = () => {
+  const lastMessageRef = createRef();
   const router = useRouter();
   const context = useContext(ConversationContext);
-
-  const previousMessage = useRef(null);
   const [message, setMessage] = useState("");
 
+  useEffect(() => {
+    scrollToBottom();
+  });
+
+  const handleMessage = (e) => {
+    setMessage(e.target.value)
+  }
+
   const handlePost = (e) => {
-    if (e.key === "Enter") {
+    if (e.type === "click" || e.key === "Enter") {
       if (message) {
         postNewMessage({
           conversationId: context.conversation.id,
           userId: loggedUserId,
           body: message,
-        }).then(response => {
+        }).then(() => {
           patchConversation(context.conversation.id);
           setMessage("");
+          scrollToBottom();
           router.replace(router.asPath);
         });
       }
     }
   };
+
+  const scrollToBottom = () => {
+    lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <Wrapper>
@@ -41,16 +55,13 @@ const Conversation = () => {
         {context.messages.map((message, key) => (
           <Message key={key} message={message} />
         ))}
+        <BottomMessage ref={lastMessageRef} />
       </Flow>
 
-      <InputWrapper>
-        <Input
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          onKeyPress={handlePost.bind(this)}
-          placeholder="Type your message here ..."
-        />
-      </InputWrapper>
+      <InputMessageBox
+        onChange={handleMessage.bind(this)}
+        onValidate={handlePost.bind(this)}
+      />
     </Wrapper>
   );
 }

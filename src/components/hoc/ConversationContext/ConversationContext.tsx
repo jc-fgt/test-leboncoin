@@ -1,4 +1,5 @@
-import React, { createContext, useContext } from "react";
+"use strict";
+import React, { createContext } from "react";
 import { Message as MessageType } from "@types/message";
 import { Conversation as ConversationType } from "@types/conversation";
 import { getLoggedUserId } from "@utils/getLoggedUserId";

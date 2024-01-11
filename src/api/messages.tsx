@@ -1,3 +1,4 @@
+"use strict";
 import { Message } from "@types/message";
 
 export const getByConversationId = async (id: number): Promise<Message[]> => {

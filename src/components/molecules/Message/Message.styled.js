@@ -1,3 +1,4 @@
+"use strict";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -18,6 +19,7 @@ export const Tile = styled.div`
   background-color: ${props => props.color};
   &:before {
     position: static;
+    width: 0;
     margin-top: -30px;
     content: "${props => props.author}";
     color: lightgrey;

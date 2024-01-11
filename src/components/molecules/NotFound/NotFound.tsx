@@ -1,9 +1,10 @@
+"use strict";
 import React from "react";
-import Header from "@components/Header/Header";
+import Header from "@components/atoms/Header/Header";
 import styles from '@styles/Conversations.module.css';
-import { Wrapper } from "@pages/NotFound/NotFound.styled";
+import { Wrapper } from "./NotFound.styled";
 
-function NotFound() {
+const NotFound = () => {
   return (
     <div className={styles.container}>
       <Header type="small" />
