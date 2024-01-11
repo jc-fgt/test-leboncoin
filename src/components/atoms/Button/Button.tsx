@@ -13,23 +13,23 @@ interface Props {
   label: string;
 }
 
-const AddButton = ({ onValidate, theme, label }: Props) => {
+const Button = ({ onValidate, theme, label }: Props) => {
   switch (theme) {
     case "validate":
       return (
-        <GreenButton onClick={(e) => onValidate(e)}>{label}</GreenButton>
+        <GreenButton data-testid="toggleButton" onClick={(e) => onValidate(e)}>{label}</GreenButton>
       )
 
     case "add":
       return (
-        <OrangeButton onClick={(e) => onValidate(e)}>{label}</OrangeButton>
+        <OrangeButton data-testid="toggleButton" onClick={(e) => onValidate(e)}>{label}</OrangeButton>
       )
 
     default:
       return (
-        <GreyButton disabled>{label}</GreyButton>
+        <GreyButton data-testid="toggleButton" disabled="disabled">{label}</GreyButton>
       )
   }
 }
 
-export default AddButton;
+export default Button;

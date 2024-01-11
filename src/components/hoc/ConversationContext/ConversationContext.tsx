@@ -1,4 +1,3 @@
-"use strict";
 import React, { createContext } from "react";
 import { Message as MessageType } from "@types/message";
 import { Conversation as ConversationType } from "@types/conversation";
