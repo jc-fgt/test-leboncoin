@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { Conversation } from "@types/conversation";
 import { randomColor } from "@utils/colors";
 import { formatedDateFromTimestamp } from "@utils/dates";
-import { Wrapper, Tile, Persona, LeftSideTile, RightSideTile } from "./Conversations.styled";
+import { Wrapper, Container, Tile, Persona, LeftSideTile, RightSideTile } from "./Conversations.styled";
 import NewConversation from "@components/molecules/NewConversation/NewConversation";
 import Button, { BUTTON_ADD } from "@components/atoms/Button/Button";
 import { useRouter } from "next/router";
@@ -47,19 +47,20 @@ const Conversations = ({ conversations }: Props) => {
     <Wrapper>
 
       {displayLayer && <NewConversation loaded={displayLayer} onPost={handlePost.bind(this)} onClose={toggleNewConversationLayer.bind(this)} />}
+      <Container>
+        {conversations.map((conversation, key) => (
+          <Tile key={key} href={`/conversation/${conversation.id}`}>
+            <LeftSideTile>
+              <Persona color={randomColor(conversation.senderNickname)} />
+            </LeftSideTile>
+            <RightSideTile>
+              <div>{conversation.senderNickname}</div>
+              <div>{formatedDateFromTimestamp(conversation.lastMessageTimestamp)}</div>
+            </RightSideTile>
+          </Tile>
+        ))}
+      </Container>
 
-      {conversations.map((conversation, key) => (
-        <Tile key={key} href={`/conversation/${conversation.id}`}>
-          <LeftSideTile>
-            <Persona color={randomColor(conversation.senderNickname)} />
-          </LeftSideTile>
-          <RightSideTile>
-            <div>{conversation.senderNickname}</div>
-            <div>{formatedDateFromTimestamp(conversation.lastMessageTimestamp)}</div>
-          </RightSideTile>
-        </Tile>
-      )
-      )}
 
       <Button onValidate={toggleNewConversationLayer.bind(this)} theme={BUTTON_ADD} label="Nouvelle conversation" />
     </Wrapper>

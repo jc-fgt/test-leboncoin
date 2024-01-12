@@ -15,11 +15,17 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Container = styled.div`
+
+  height: 80vh;
+  overflow: auto;
+`
+
 export const Tile = styled(Link)`
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px grey;
   margin: 5px;
-  width: 100%;
+  width: 95%;
   display:flex;
   padding: 10px 2px;
   gap: 10%;

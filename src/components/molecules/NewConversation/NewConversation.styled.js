@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   display: grid;
-  margin: 50% auto;
+  margin: 15vh auto;
   width: 20rem;
   height: 20rem;
   background: #FFF;
